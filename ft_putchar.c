@@ -16,4 +16,3 @@ void	ft_putchar(char b)
 {
 	write(1, &b, 1);
 }
-
