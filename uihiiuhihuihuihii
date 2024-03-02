@@ -1,0 +1,57 @@
+#include <unistd.h>
+
+// Função para imprimir um caractere na tela
+void imprimirCaractere(char c)
+{
+    write(1, &c, 1);
+}
+
+// Função para desenhar uma linha com cantos e bordas
+void desenharLinha(int largura, char cantoEsquerdo, char meio, char cantoDireito)
+{
+    int j = 0;
+    while (j < largura)
+    {
+        if (j == 0)
+            imprimirCaractere(cantoEsquerdo);
+        else
+        {
+            if (j == largura - 1)
+                imprimirCaractere(cantoDireito);
+            else
+                imprimirCaractere(meio);
+        }
+        j++;
+    }
+    imprimirCaractere('\n');
+}
+
+// Função principal para desenhar o padrão
+void desenharPadrao(int largura, int altura)
+{
+    int i = 0;
+    if (largura <= 0 || altura <= 0)
+        return;
+
+    while (i < altura)
+    {
+        if (i == 0)
+            desenharLinha(largura, 'A', 'B', 'A');
+        else
+        {
+            if (i == altura - 1)
+                desenharLinha(largura, 'C', 'B', 'C');
+            else
+                desenharLinha(largura, 'B', ' ', 'B');
+        }
+        i++;
+    }
+}
+
+int main()
+{
+    // Chamando a função desenharPadrao com os parâmetros desejados
+    desenharPadrao(5, 3);
+
+    return 0;
+}
