@@ -11,10 +11,11 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <rush02.c>
 
-int	main(){
-	rush(5, 5);
+void	rush(int x, int y);
+
+int	main(void)
+{
+	rush(123, 45);
 	return (0);
 }
-
