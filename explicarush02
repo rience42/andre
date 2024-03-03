@@ -15,3 +15,93 @@ Ela percorre as linhas do retângulo e decide se deve imprimir uma linha com can
 
 A ideia geral é criar um padrão visual de um retângulo onde 'A' representa o canto superior esquerdo, 'B' representa as bordas e 'C' representa o canto superior direito. 
 As linhas laterais são preenchidas com 'B' e o interior do retângulo com espaços em branco.
+
+********************************* void cantos superiores  e infer ****************************************************************
+
+
+void cantos_superiores_infe(int largura): Declaração da função cantos_superiores_infe, que recebe um argumento largura do tipo inteiro e não retorna nenhum valor (void).
+
+int j;: Declaração da variável inteira j, que será usada como um contador na próxima parte.
+
+ft_putchar('A');: Chama a função ft_putchar para imprimir o caractere 'A', que representa o canto superior esquerdo do retângulo.
+
+j = 1;: Inicializa a variável j com o valor 1. Esta variável será usada como um contador no próximo loop.
+
+while (j < largura - 1): Inicia um loop while que continuará enquanto j for menor que (largura - 1).
+
+ft_putchar('B');: Dentro do loop, chama a função ft_putchar para imprimir o caractere 'B', que representa o preenchimento da borda do retângulo.
+
+j++;: Incrementa o valor de j a cada iteração do loop.
+
+if (largura > 1): Verifica se a largura é maior que 1.
+
+ft_putchar('C');: Se a largura for maior que 1, chama a função ft_putchar para imprimir o caractere 'C', que representa o canto superior direito do retângulo.
+
+ft_putchar('\n');: Chama a função ft_putchar para imprimir um caractere de nova linha, movendo a impressão para a próxima linha no terminal.
+
+Em resumo, essa função gera uma linha do retângulo, onde os cantos superior esquerdo e direito são representados pelos caracteres 'A' e 'C', respectivamente, e o preenchimento da borda é feito com o caractere 'B'. 
+A largura do retângulo é determinada pelo parâmetro largura.
+
+
+
+****************************************** void cantos laterais *************************************************************************************************
+
+
+
+
+Esta função é responsável por imprimir uma linha que forma os cantos laterais de um retângulo, dependendo do comprimento fornecido como argumento compri. Aqui está o passo a passo:
+
+void cantos_laterais(int compri): Declaração da função cantos_laterais, que recebe um argumento compri do tipo inteiro e não retorna nenhum valor (void).
+
+int i;: Declaração da variável inteira i, que será usada como um contador na próxima parte.
+
+ft_putchar('B');: Chama a função ft_putchar para imprimir o caractere 'B', que representa a borda lateral esquerda do retângulo.
+
+i = 1;: Inicializa a variável i com o valor 1. Esta variável será usada como um contador no próximo loop.
+
+while (i < compri - 1): Inicia um loop while que continuará enquanto i for menor que (compri - 1).
+
+ft_putchar(' ');: Dentro do loop, chama a função ft_putchar para imprimir um espaço em branco, representando o interior do retângulo.
+
+i++;: Incrementa o valor de i a cada iteração do loop.
+
+if (compri > 1): Verifica se o comprimento é maior que 1.
+
+ft_putchar('B');: Se o comprimento for maior que 1, chama a função ft_putchar para imprimir o caractere 'B', representando a borda lateral direita do retângulo.
+
+ft_putchar('\n');: Chama a função ft_putchar para imprimir um caractere de nova linha, movendo a impressão para a próxima linha no terminal.
+
+Em resumo, essa função gera uma linha do retângulo, onde as bordas laterais esquerda e direita são representadas pelos caracteres 'B', e o interior do retângulo é preenchido com espaços em branco. 
+O comprimento do retângulo é determinado pelo parâmetro compri.
+
+
+
+****************************************************** rush ********************************************************************************************
+
+
+
+Esta função é a principal do seu programa e é responsável por gerar o padrão completo do retângulo com base nos parâmetros x (largura) e y (altura) fornecidos.
+
+Aqui está o passo a passo:
+
+void rush(int x, int y): Declaração da função rush, que recebe dois argumentos x e y do tipo inteiro e não retorna nenhum valor (void).
+
+int cont;: Declaração da variável inteira cont, que será usada como um contador no próximo passo.
+
+cont = 0;: Inicializa a variável cont com o valor 0.
+
+while (cont < y): Inicia um loop while que continuará enquanto cont for menor que y.
+
+if (cont == 0 || cont == y - 1): Dentro do loop, verifica se a linha atual (cont) é a primeira (cont == 0) ou a última (cont == y - 1) do retângulo.
+
+cantos_superiores_infe(x);: Se a linha atual é a primeira ou a última, chama a função cantos_superiores_infe para imprimir os cantos superior e inferior do retângulo.
+
+else: Se a linha não é nem a primeira nem a última, entra no bloco else.
+
+cantos_laterais(x);: Chama a função cantos_laterais para imprimir os cantos laterais do retângulo.
+
+cont++;: Incrementa o valor de cont a cada iteração do loop.
+
+O loop while continua até que todas as linhas do retângulo tenham sido geradas. A decisão de chamar a função cantos_superiores_infe ou cantos_laterais depende da posição da linha no retângulo. 
+Isso resulta na geração do padrão visual completo do retângulo com cantos superiores/inferiores e laterais. O tamanho do retângulo é determinado pelos parâmetros x e y.
+
