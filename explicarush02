@@ -1,0 +1,17 @@
+
+Este código em linguagem C é a implementação de uma função chamada rush, que gera padrões retangulares de caracteres na tela. O padrão gerado depende dos parâmetros de entrada x (largura) e y (altura) fornecidos à função.
+
+A função ft_putchar é uma função auxiliar que escreve um único caractere no terminal.
+
+A função cantos_superiores_infe é responsável por imprimir as linhas que formam os cantos superior e inferior do retângulo. 
+Os caracteres usados são 'A' para o canto superior esquerdo, 'B' para o preenchimento da borda e 'C' para o canto superior direito. 
+O número de caracteres 'B' é determinado pela largura fornecida como argumento.
+
+A função cantos_laterais é responsável por imprimir as linhas que formam os cantos laterais do retângulo. Os caracteres usados são 'B' para a borda lateral e espaços em branco para o interior do retângulo.
+O número de espaços em branco é determinado pela largura fornecida como argumento.
+
+Finalmente, a função rush utiliza as funções auxiliares para gerar o padrão completo do retângulo com base nos parâmetros x e y. 
+Ela percorre as linhas do retângulo e decide se deve imprimir uma linha com cantos superiores/inferiores ou laterais, de acordo com a posição da linha no retângulo.
+
+A ideia geral é criar um padrão visual de um retângulo onde 'A' representa o canto superior esquerdo, 'B' representa as bordas e 'C' representa o canto superior direito. 
+As linhas laterais são preenchidas com 'B' e o interior do retângulo com espaços em branco.
