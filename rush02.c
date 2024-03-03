@@ -14,8 +14,8 @@
 
 void	ft_putchar(char b);
 
-// Funcao para imprimir os cantos superiores (A e C)
-void	cantos_superiores(int largura)
+// Funcao para imprimir os cantos superiores inferiores (A e C)
+void	cantos_superiores_infe(int largura)
 {
 	int	j;
 
@@ -26,7 +26,10 @@ void	cantos_superiores(int largura)
 		ft_putchar('B');
 		j++;
 	}
-	ft_putchar('C');
+	if (largura > 1)
+	{
+		ft_putchar('C');
+	}
 	ft_putchar('\n');
 }
 
@@ -42,7 +45,10 @@ void	cantos_laterais(int compri)
 		ft_putchar(' ');
 		i++;
 	}
-	ft_putchar('B');
+	if (compri > 1)
+	{
+		ft_putchar('B');
+	}
 	ft_putchar('\n');
 }
 
@@ -55,7 +61,7 @@ void	rush(int x, int y)
 	{
 		if (cont == 0 || cont == y - 1)
 		{
-			cantos_superiores(x);
+			cantos_superiores_infe(x);
 		}
 		else
 		{
